@@ -1,0 +1,1 @@
+void muunnaTaulu(unsigned int koko, double taulu[], double (*muunnos)(double));

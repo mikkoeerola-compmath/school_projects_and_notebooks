@@ -1,0 +1,26 @@
+Using part1 init, group_recommendations and aggregate_group_mean to make group recommendations lists.
+Considering the top 5 recommended movies we try to fing counterfactual explanations to the top
+recommended movie.
+
+The designed algorithm combines greedy grow method with diversity cluster representatives. Firts build
+classic explanations with greedy grow using movies that most users have rated highly.
+Ggreedy grow algorithm gives out an exlpanation list that is in most cases quite long.
+We cluster the list with K-Means algorithm to k clusters and select the most influencial
+representative from each cluster. The clustering is done with rating patterns the group has given.
+
+Testing is done with 5 random users from the dataset. There is a lot of testig purpose printing.
+
+The program should be run in the folder where the MovieLens data FOLDER is in. The program reads
+csv file with path "./ml-100k/u.*". The projectpart1.py file should be in the same folder than
+the main file projectpart4.py file. The projectpart1.py file is used to build the initial group
+recommendation and to read the data.
+
+working directory
+--part4
+----projectpart1.py
+----projectpart4.py
+--ml-100k
+----u.*
+----...
+
+So in working directory/root run: python .\part4\projectpart4.py

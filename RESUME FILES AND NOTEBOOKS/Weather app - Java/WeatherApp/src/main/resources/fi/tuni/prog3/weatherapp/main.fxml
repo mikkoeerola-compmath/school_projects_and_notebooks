@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- fxml file to define the main window. Author Mikko Eerola. -->
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="371.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.tuni.prog3.weatherapp.MainController">
+    <!--<stylesheets> <URL fx:value="@weathergui.css"/> </stylesheets>-->
+   <children>
+      <ImageView fitHeight="518.0" fitWidth="384.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@backgroundImage.jpg" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.25" contrast="0.09" saturation="-0.11" />
+         </effect>
+      </ImageView>
+      <HBox layoutX="9.0" layoutY="167.0" minWidth="-Infinity" prefHeight="106.0" prefWidth="350.0" style="-fx-background-color: rgba(0, 0, 0, 0.3);;" AnchorPane.topAnchor="162.0">
+         <children>
+            <VBox fx:id="day1" alignment="CENTER" minWidth="-Infinity" onMouseClicked="#showHourly1" prefHeight="106.0" prefWidth="69.0">
+               <children>
+                  <Label fx:id="date1" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#showHourly1" prefHeight="18.0" prefWidth="111.0" text=" TO 11.4" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <ImageView fx:id="wIcon1" fitHeight="48.0" fitWidth="55.0" onMouseClicked="#showHourly1" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="highLow1" alignment="CENTER" prefHeight="18.0" prefWidth="112.0" text="ylinalin" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="add1" alignment="CENTER" prefHeight="18.0" prefWidth="107.0" text="lisä" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </VBox>
+            <VBox fx:id="day2" alignment="CENTER" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" onMouseClicked="#showHourly2" prefHeight="200.0" prefWidth="69.0">
+               <children>
+                  <Label fx:id="date2" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#showHourly2" prefHeight="18.0" prefWidth="111.0" text="PE 12.4" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <ImageView fx:id="wIcon2" fitHeight="48.0" fitWidth="55.0" onMouseClicked="#showHourly2" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="highLow2" alignment="CENTER" prefHeight="18.0" prefWidth="112.0" text="ylinalin" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="add2" alignment="CENTER" prefHeight="18.0" prefWidth="107.0" text="lisä" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </VBox>
+            <VBox fx:id="day3" alignment="CENTER" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" onMouseClicked="#showHourly3" prefHeight="200.0" prefWidth="69.0">
+               <children>
+                  <Label fx:id="date3" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#showHourly3" prefHeight="18.0" prefWidth="111.0" text="LA 13.4" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <ImageView fx:id="wIcon3" fitHeight="48.0" fitWidth="55.0" onMouseClicked="#showHourly3" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="highLow3" alignment="CENTER" prefHeight="18.0" prefWidth="112.0" text="ylinalin" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="add3" alignment="CENTER" prefHeight="18.0" prefWidth="107.0" text="lisä" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </VBox>
+            <VBox fx:id="day4" alignment="CENTER" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" onMouseClicked="#showHourly4" prefHeight="200.0" prefWidth="69.0">
+               <children>
+                  <Label fx:id="date4" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#showHourly4" prefHeight="18.0" prefWidth="111.0" text="SU 14.4" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <ImageView fx:id="wIcon4" fitHeight="48.0" fitWidth="55.0" onMouseClicked="#showHourly4" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="highLow4" alignment="CENTER" prefHeight="18.0" prefWidth="112.0" text="ylinalin" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="add4" alignment="CENTER" prefHeight="18.0" prefWidth="107.0" text="lisä" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="69.0">
+               <children>
+                  <Label fx:id="date5" alignment="CENTER" contentDisplay="TOP" prefHeight="18.0" prefWidth="111.0" text="MA 15.4" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <ImageView fx:id="wIcon5" fitHeight="48.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="highLow5" alignment="CENTER" prefHeight="18.0" prefWidth="112.0" text="ylinalin" textAlignment="CENTER" textFill="WHITE" />
+                  <Label fx:id="add5" alignment="CENTER" prefHeight="18.0" prefWidth="107.0" text="lisä" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <ScrollPane layoutX="9.0" layoutY="284.0" prefHeight="226.0" prefWidth="350.0" stylesheets="@weathergui.css" vbarPolicy="NEVER">
+        <content>
+          <AnchorPane minHeight="-Infinity" minWidth="1000.0" prefHeight="212.0" prefWidth="1000.0" style="-fx-background-color: rgba(0, 0, 0, 0.3);">
+               <children>
+                  <GridPane alignment="CENTER" minWidth="-Infinity" prefHeight="178.4" prefWidth="1000.0" style="-fx-background-color: rgba(0, 0, 0, 0.3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="°C" textFill="WHITE" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="64.0" prefWidth="72.0" text="m/s" textFill="WHITE" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="74.0" text="mm/h" textFill="WHITE" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime1" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="00" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="gIcon1" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon2" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon3" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon4" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon5" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon6" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon7" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon8" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon9" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon10" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon11" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon12" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon13" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon14" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon15" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="15" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon16" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="16" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon17" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="17" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon18" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="18" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon19" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="19" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon20" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="20" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon21" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="21" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon22" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="22" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon23" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="23" GridPane.rowIndex="1" />
+                        <ImageView fx:id="gIcon24" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="24" GridPane.rowIndex="1" />
+                        <Label fx:id="gTime2" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="01" textFill="WHITE" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime3" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="02" textFill="WHITE" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime4" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="03" textFill="WHITE" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime5" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="04" textFill="WHITE" GridPane.columnIndex="5">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime6" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="05" textFill="WHITE" GridPane.columnIndex="6">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime7" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="06" textFill="WHITE" GridPane.columnIndex="7">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime8" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="07" textFill="WHITE" GridPane.columnIndex="8">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime9" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="08" textFill="WHITE" GridPane.columnIndex="9">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime10" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="09" textFill="WHITE" GridPane.columnIndex="10">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime11" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="10" textFill="WHITE" GridPane.columnIndex="11">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime12" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="11" textFill="WHITE" GridPane.columnIndex="12">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime13" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="12" textFill="WHITE" GridPane.columnIndex="13">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime14" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="13" textFill="WHITE" GridPane.columnIndex="14">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime15" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="14" textFill="WHITE" GridPane.columnIndex="15">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime16" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="15" textFill="WHITE" GridPane.columnIndex="16">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime17" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="16" textFill="WHITE" GridPane.columnIndex="17">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime18" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="17" textFill="WHITE" GridPane.columnIndex="18">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime19" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="18" textFill="WHITE" GridPane.columnIndex="19">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime20" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="19" textFill="WHITE" GridPane.columnIndex="20">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime21" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="20" textFill="WHITE" GridPane.columnIndex="21">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime22" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="21" textFill="WHITE" GridPane.columnIndex="22">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime23" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="22" textFill="WHITE" GridPane.columnIndex="23">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTime24" alignment="CENTER" prefHeight="55.0" prefWidth="90.0" text="23" textFill="WHITE" GridPane.columnIndex="24">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp1" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp2" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp3" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp4" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp5" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp6" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp7" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp8" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="8" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp9" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="9" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp10" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="10" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp11" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="11" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp12" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="12" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp13" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="13" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp14" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="14" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp15" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="15" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp16" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="16" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp17" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="17" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp18" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="18" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp19" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="19" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp20" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="20" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp21" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="21" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp22" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="22" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp23" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="23" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gTemp24" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="24" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind1" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind2" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind3" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind4" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind5" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind6" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind7" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind8" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="8" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind9" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="9" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind10" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="10" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind11" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="11" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind12" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="12" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind13" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="13" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind14" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="14" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind15" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="15" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind16" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="16" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind17" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="17" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind18" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="18" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind19" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="19" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind20" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="20" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind21" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="21" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind22" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="22" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind23" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="23" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gWind24" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="24" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain1" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain2" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain3" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain4" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain5" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain6" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain7" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain8" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="8" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain9" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="9" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain10" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="10" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain11" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="11" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain12" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="12" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain13" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="13" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain14" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="14" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain15" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="15" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain16" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="16" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain17" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="17" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain18" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="18" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain19" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="19" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain20" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="20" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain21" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="21" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain22" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="22" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain23" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="23" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="gRain24" alignment="CENTER" prefHeight="58.0" prefWidth="64.0" text="NaN" textFill="WHITE" GridPane.columnIndex="24" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label fx:id="city" contentDisplay="TOP" layoutX="9.0" layoutY="9.0" prefHeight="35.0" prefWidth="266.0" text="Uusikaupunki" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <FlowPane alignment="CENTER" layoutX="9.0" layoutY="45.0" orientation="VERTICAL" prefHeight="114.0" prefWidth="350.0" style="-fx-background-color: rgba(0, 0, 0, 0.3);">
+         <children>
+            <VBox prefHeight="107.0" prefWidth="79.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="154.0" text="Sää nyt:" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="wIconNow" fitHeight="83.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+            <Label fx:id="tempNow" alignment="CENTER" contentDisplay="CENTER" prefHeight="87.0" prefWidth="147.0" text="-25.3°C" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee UI" size="42.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.84" />
+               </effect>
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding></Label>
+            <VBox prefHeight="122.0" prefWidth="104.0">
+               <children>
+                  <Label fx:id="highLowNow" prefHeight="24.0" prefWidth="100.0" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="windNow" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="100.0" text="tuuli:" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="pressureNow" layoutX="10.0" layoutY="33.0" prefHeight="25.0" prefWidth="100.0" text="ilmanp.:" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="feelslikeNow" layoutX="10.0" layoutY="56.0" prefHeight="25.0" prefWidth="100.0" text="👤:" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="sunNow" layoutX="10.0" layoutY="80.0" prefHeight="25.0" prefWidth="100.0" text="🌅:" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </FlowPane>
+      <MenuButton fx:id="menu" layoutX="278.0" layoutY="14.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" text="🌟&amp;🔍" textFill="WHITE">
+        <items>
+          <MenuItem fx:id="setFav" mnemonicParsing="false" onAction="#setFav" text="Aseta suosikiksi" />
+          <MenuItem fx:id="search" mnemonicParsing="false" onAction="#searchMenu" text="Haku" />
+          <MenuItem fx:id="chart" mnemonicParsing="false" onAction="#showChart" text="Lämpötila kuvaaja" />
+        </items>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </MenuButton>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

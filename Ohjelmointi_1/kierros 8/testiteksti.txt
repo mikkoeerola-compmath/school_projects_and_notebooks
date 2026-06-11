@@ -1,0 +1,11 @@
+mikko 2
+mikko 5
+sanni 2
+ida 4
+ida 6
+mikko 5
+juti 10
+ida 8
+mikko 3
+juti 1
+ida 5

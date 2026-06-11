@@ -1,0 +1,1 @@
+void pvm_ero(const char *pvm1, const char *pvm2);

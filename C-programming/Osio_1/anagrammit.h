@@ -1,0 +1,1 @@
+int anagrammeja(const char mj1[], const char mj2[]);

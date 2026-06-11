@@ -1,0 +1,14 @@
+# Never push bytecode to the repository.
+*.class
+/round4/sudoku/target/
+/round5/datetime/target/
+/round6/shapes/shapes/target/
+/round7/json/target/
+/round7/sevenzipsearch/target/
+/round8/streams/target/
+/round8/streams2/target/
+/round10/javadocjson_new/target/
+/round10/javadocjson/target/
+/round11/junitattainment_new/nbproject/
+/round12/calc/target/
+/round12/mavenproject1/target/

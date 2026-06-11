@@ -1,0 +1,9 @@
+Tampere;Jyväskylä;148
+Jyväskylä;Tampere;148
+Tampere;Helsinki;178
+Helsinki;Tampere;178
+Helsinki;Lahti;104
+Lahti;Helsinki;104
+Lahti;Tampere;131
+Tampere;Lahti;131
+Tampere;Pori;114

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- fxml file to define the search window. Author Mikko Eerola. -->
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="273.0" stylesheets="@weathergui.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.tuni.prog3.weatherapp.SearchController">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="274.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@searchImage.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane hbarPolicy="NEVER" layoutX="17.0" layoutY="140.0">
+         <content>
+            <VBox fx:id="searchBox" prefHeight="190.0" prefWidth="235.0">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding></VBox>
+         </content>
+      </ScrollPane>
+      <VBox layoutX="15.0" layoutY="57.0" prefHeight="50.0" prefWidth="237.0">
+         <children>
+            <TextField fx:id="searchText" onKeyPressed="#enterSearch" promptText="Hea kaupunkia" style="-fx-background-color: rgba(0, 0, 0, 0.5); -fx-text-fill: white;" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchLoc" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: rgba(0, 0, 0, 0.7);" text="Hae" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </VBox>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" onAction="#backClicked" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: rgba(0, 0, 0, 0.6);;" text="Takaisin" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <MenuButton fx:id="menuFav" layoutX="179.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0.5);" text="Suosikit" textFill="WHITE">
+        <items>
+        </items>
+      </MenuButton>
+      <Label alignment="CENTER" layoutX="15.0" layoutY="114.0" prefHeight="16.0" prefWidth="89.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" text="Hakuhistoria:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

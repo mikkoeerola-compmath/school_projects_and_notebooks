@@ -1,0 +1,8 @@
+arvot[0] = 0.06
+arvot[1] = 0.13
+arvot[2] = 0.19
+arvot[3] = 0.25
+arvot[4] = 0.31
+arvot[5] = 0.38
+arvot[6] = 0.44
+arvot[7] = 0.50

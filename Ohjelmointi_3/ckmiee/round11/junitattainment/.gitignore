@@ -1,0 +1,6 @@
+# Do not ignore the bytecode in this directory.
+!testfiles/0/Attainment.class
+!testfiles/1/Attainment.class
+!testfiles/2/Attainment.class
+!testfiles/3/Attainment.class
+!testfiles/4/Attainment.class

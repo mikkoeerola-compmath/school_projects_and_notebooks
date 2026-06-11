@@ -1,0 +1,10 @@
+-- Tietokantojen perusteet - Database basics
+-- H1 T11
+-- mikko.eerola@tuni.fi
+
+a. true
+b. false
+c. unknown
+d. unknown
+e. true
+f. false

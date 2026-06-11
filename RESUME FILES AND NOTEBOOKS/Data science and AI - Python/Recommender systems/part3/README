@@ -1,0 +1,28 @@
+Using part1 init and recommender function make group member recommendations lists. Using these full lists and considering
+only top50 predicted movies from each users we build a candidate list of movies for the sqeuntial recommendations.
+
+The new method modifies the Motley method by incrementally adding elements to the result set R from
+sorted candidate set S, if the element increases the F-score of the set R by treshold theta.
+The first element chosen is the highest predicted movie on average. It is crucial to set the lambda
+factor in F-score to represent wanted balance between similarity and diversity. Also selecting
+theta will affect how eagerly the method selects similar items vs. diverse items. The default
+values are: lambda=0.5 and theta=0.3.
+
+The method increses the F-score of the result set directly. One can choose a target F-score and
+use the theta-value to achieve the target if it is possible with the candidate set S.
+Optimizing the result or F-score is not guaranteed. 
+
+The program should be run in the folder where the MovieLens data FOLDER is in. The program reads
+csv file with path "./ml-100k/u.*". The projectpart1.py file should be in the same folder than
+the main file projectpart3.py file. The projectpart1.py file is used to build the initial group
+recommendation and to read the data.
+
+working directory
+--part3
+----projectpart1.py
+----projectpart3.py
+--ml-100k
+----u.*
+----...
+
+So in working directory/root run: python .\part3\projectpart3.py

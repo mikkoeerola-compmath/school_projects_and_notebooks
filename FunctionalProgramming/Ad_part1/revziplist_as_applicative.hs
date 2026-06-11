@@ -1,0 +1,27 @@
+import Control.Applicative -- this line may be unnecessary in your local testing if you have a more recent version of the Haskell platform
+
+instance Functor RevZipList where
+    fmap f (RevZipList a) = RevZipList (map f a)
+
+instance Applicative RevZipList where
+    pure a = RevZipList [a]
+    (RevZipList fs) <*> (RevZipList xs) =
+        RevZipList (reverse (zipWith (\f x -> f x) (reverse fs) (reverse xs)))
+
+
+makeFuncList :: [(Char,Int)] -> [(Int->Int)]
+makeFuncList xs = map makeFunc xs
+
+makeFunc ('+',x) = (+x)
+makeFunc ('*',x) = (*x)
+makeFunc _ = \x -> 0
+
+
+main = do
+ input1 <- getLine
+ input2 <- getLine
+ print $ getRevZipList ( (RevZipList (makeFuncList (read input1 :: [(Char,Int)]) ) )
+  <*>
+  (RevZipList (read input2 :: [Int])) ) 
+
+newtype RevZipList a = RevZipList { getRevZipList :: [a] }

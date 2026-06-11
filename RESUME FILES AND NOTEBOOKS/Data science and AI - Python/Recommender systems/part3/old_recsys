@@ -1,0 +1,53 @@
+def recommend_movies(user_id, user_similarity, user_movie_matrix):
+
+    target_user = user_id
+    recommend_users = user_similarity[target_user].sort_values(ascending=False)
+
+    #let's drop the target user themselve
+    recommend_users = recommend_users.drop(target_user)
+
+    # Also let's drop users with not so many common ratings:
+    target_user_ratings = user_movie_matrix.loc[target_user]
+    for user in recommend_users.index:
+        if len(target_user_ratings.dropna().index.intersection(user_movie_matrix.loc[user].dropna().index)) < 5:
+            recommend_users.drop(user)
+
+    # find the movies the target user hasn't rated
+    unrated_movies = target_user_ratings[target_user_ratings.isna()].index
+
+    # predict the rating for the target user in a dict
+    avg_target_rating = target_user_ratings.mean()
+    predicted_ratings = {}
+
+    for movie in unrated_movies:
+        movie_ratings = user_movie_matrix[movie]
+        users_who_rated = movie_ratings[movie_ratings.notna()].index
+
+        # let's consider top-100 closest neighbours
+        common_index = recommend_users[users_who_rated].index \
+            .intersection(recommend_users.index)
+        sims = recommend_users[common_index][0:99]
+
+        # if there are more than one users who have rated the movie, calculate the prediction
+        if len(sims) > 1:
+            users = sims.index
+
+            # Vector of user average ratings
+            user_avgs = user_movie_matrix.loc[users].mean(axis=1)
+
+            # Vector of users’ ratings for this movie
+            user_movie_vals = movie_ratings.loc[users]
+
+            # Compute numerator and denominator
+            numerators = sims.values * (user_movie_vals.values - user_avgs.values)
+            denominator = np.abs(sims.values).sum()
+            if denominator == 0:
+                continue
+            predicted_ratings[movie] = avg_target_rating + numerators.sum()/denominator
+        else:
+            predicted_ratings[movie] = 0
+
+    predicted_ratings_series = pd.Series(predicted_ratings)
+    predicted_ratings_series.index = predicted_ratings_series.index.map(movie_id_to_title)
+
+    return predicted_ratings_series.sort_values(ascending=False)

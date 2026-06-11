@@ -1,0 +1,13 @@
+-- Tietokantojen perusteet - Database basics
+-- H4 osa2 T5
+-- mikko.eerola@tuni.fi
+
+
+a. FALSE
+b. unknown
+c. TRUE
+d. unknown
+e. unknown
+f. FALSE
+g. unknown
+h. TRUE

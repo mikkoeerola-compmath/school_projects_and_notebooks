@@ -1,0 +1,29 @@
+Recommender Systems project part2 -- 2025 -- Mikko Eerola
+
+Using part1 init and recommender function make group member recommendations lists. Using these full lists and considering
+only top20 predicted movies from each users we build a candidate list of movies for the sqeuntial recommendations.
+
+The 'new' sequential group recommender design combines balancing satisfaction method with squirrel ML framework of pleasing
+the most disagreeing member when group disagreenment is high. This is done as follows:
+
+Considering seq. rec. S_i at i round of recommendations. The next movie j is chosen to S_i+1 so that the score is maximized.
+The score is defined as: a * satO(S_i+1) + b * groupDisagreenment(S_i+1).
+
+where a and b are balancing scalars by default a=0.7 and 0.3. This means that overall satisfaction is prioritized first.
+After adding j to recommendations list S_i+1, the groupDisagreenment is over 0.5 next item is selected with adjusted scalars
+(a=0.3 and b=0-7). This process is continued untill we have 5 sequential recommendations for the group.
+
+This process balances the satisfaction and disagreenment and works like a light version of the machine learning version.
+In the final list of seqeuntial recommendations the predicted rating is the avergare prediction between the group.
+
+The program should be run in the folder where the MovieLens data FOLDER is in. The program reads csv file with path "./ml-100k/u.*".
+The projectpart1.py file should be in the same folder than the main file projectpart2.py file.
+
+root
+--part2
+----projectpart1.py
+----projectpart2.py
+--ml-100k
+----u.*
+----...
+So in working directory/root run: python .\part2\projectpart2.py

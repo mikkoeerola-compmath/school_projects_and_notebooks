@@ -1,0 +1,9 @@
+-- Tietokantojen perusteet - Database basics
+-- H5 T5b
+-- mikko.eerola@tuni.fi
+
+SELECT ar.artist_id, first_name, last_name, COUNT(artwork_id)
+    AS artwork_count, MIN(value) as min_value, MAX(value) as max_value
+FROM artist ar LEFT OUTER JOIN artwork aw ON aw.artist_id = ar.artist_id
+GROUP BY ar.artist_id, first_name, last_name
+ORDER BY ar.artist_id;

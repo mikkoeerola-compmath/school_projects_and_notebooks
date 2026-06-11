@@ -1,0 +1,5 @@
+Recommender Systems project part1 -- 2025 -- Mikko Eerola
+
+The part one of the course project is implemented with Python pandas. So to run the code pandas should be installed. The program should be run in the folder where the MovieLens data FOLDER is in. The program reads csv file with path "./ml-100k/u.*".
+
+The program prints texts, dataframes and recommendations to prompt. The target user is user_id = 1 and the group user_ids 1-5.

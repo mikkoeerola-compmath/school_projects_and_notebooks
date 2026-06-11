@@ -1,0 +1,13 @@
+.container {
+  min-height: 600px;
+  min-width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.swot {
+  border-color: blue;
+  border-style: groove;
+  min-width: 40%;
+}

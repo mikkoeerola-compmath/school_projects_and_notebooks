@@ -1,0 +1,35 @@
+body {
+  margin: 2.5em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 0.625em;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+.a {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.d {
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.b {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.c {
+  grid-area: 2/2/3/3;
+}
